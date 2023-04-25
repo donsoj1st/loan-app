@@ -33,7 +33,7 @@ class BankControllers extends Controller
         // this is to validate required field
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required |string |unique:banks,email',
         ]);
         return Bank::create($request->all());
     }

@@ -20,13 +20,14 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('employee_id');
             $table->string('role');
-            $table->string('client_permission');
             $table->string('user_permission');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedInteger('merchant_id')->nullable();
             $table->foreign('merchant_id')->references('id')->on('merchants')->onDelete('cascade');
             $table->rememberToken()->nullable();
+            $table->string('token')->nullable();
+            $table->bigInteger('token_exp')->nullable();
             $table->timestamps();
         });
     }
