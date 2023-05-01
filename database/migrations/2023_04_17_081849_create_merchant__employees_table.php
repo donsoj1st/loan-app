@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('merchant__employees', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('email')->unique();
-            $table->string('username')->unique();
+            $table->string('username')->unique()->nullable();
             $table->string('phone')->nullable();
-            $table->string('employee_id');
-            $table->string('role');
-            $table->string('user_permission');
+            $table->string('employee_id')->nullable();
+            $table->string('role')->nullable();
+            $table->string('user_permission')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->unsignedInteger('merchant_id')->nullable();

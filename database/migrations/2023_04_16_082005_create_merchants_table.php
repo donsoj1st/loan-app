@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('merchant_name');
+            $table->string('merchant_name')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
